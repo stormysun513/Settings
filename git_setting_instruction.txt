@@ -1,0 +1,61 @@
+0. Initialise globally
+
+	git config —-global user.name “stormysun513”
+	git config —-global user.email stormysun513@hotmail.com
+
+1. Initialize local repository
+
+	git init
+
+2. Add file into tracked list
+
+	git add $filename
+	git add '*.txt'								// Add all the .txt files from root directory
+
+3. Create Github repository with Github API
+
+	curl -u "$username:$token" https://api.github.com/user/repos -d '{"name":"'$repo_name'"}'
+	// Change $username, $token, $repo_name for yourselves
+
+4. Set remote repositories
+
+	git remote add origin git@github.com:$username/$repo_name.git  		or
+	git remote set-url origin git@github.com:$username/$repo_name.git
+	// Change $username, $repo_name for yourselves
+	
+	git remote -v 								// Check remote branch
+
+5. Commit changes in staged list  				// Staged files are files we have told git that are ready to be committed.
+
+	git commit -m "Commit messages."
+
+6. Push committed branch to the remote repo 
+
+	git push origin master
+
+7. Pull changes from the remote repo
+
+	git pull origin master
+
+8. Check difference between $branch and most current commit
+
+	git diff HEAD
+	git diff --staged 
+
+9. Unstage files
+
+	git reset $filename
+
+10. Checkout to the commit node where the file was add.
+
+	git checkout -- $filename
+
+11. Remove git branch
+
+	git branch -d $branchname
+
+12. Git re-ignore
+
+	git rm -r --cached .
+	git add .
+	
