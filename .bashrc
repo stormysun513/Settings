@@ -7,8 +7,7 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 
 # No ttyctl, so we need to save and then restore terminal settings
-vim()
-{
+vim() {
     # osx users, use stty -g; linux users use stty --save
     local STTYOPTS="$(stty -g)"
     stty stop '' -ixoff
