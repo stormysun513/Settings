@@ -62,3 +62,11 @@
 13. Change most recently committed message
 
     git commit --amend -m "New message"
+
+14. Undo recent commit
+
+    git commit -m "Something terribly misguided"
+    git reset HEAD~
+    << edit files as necessary >>
+    git add ...
+    git commit -c ORIG_HEAD
