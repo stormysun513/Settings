@@ -58,4 +58,7 @@
 
 	git rm -r --cached .
 	git add .
-	
+
+13. Change most recently committed message
+
+    git commit --amend -m "New message"
