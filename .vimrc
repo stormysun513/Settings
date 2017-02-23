@@ -10,7 +10,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
-Bundle 'taglist.vim'
+Plugin 'taglist.vim'
+Plugin 'dracula/vim'
 call vundle#end()                   " required
 filetype plugin indent on           " required
 
@@ -23,7 +24,8 @@ if &diff
     highlight DiffChange cterm=none ctermfg=black ctermbg=LightGreen gui=none guifg=bg guibg=LightGreen
     highlight DiffText cterm=none ctermfg=black ctermbg=Red gui=none guifg=bg guibg=Red
 else
-    colorscheme desert
+    " colorscheme desert
+    color dracula
 endif
 
 
