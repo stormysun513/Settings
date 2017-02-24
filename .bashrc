@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
-
-
 # .bashrc is executed when terminal is started after login
+
+
 GIT_PROMPT_URL="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
+VUNDLE_URL="https://github.com/VundleVim/Vundle.vim.git"
 
 
 # No ttyctl while using vim, so we need to save and then restore terminal settings
@@ -39,6 +40,13 @@ then
     curl -s -o $HOME/.config/git-prompt.sh $GIT_PROMPT_URL > /dev/null
 fi
 source $HOME/.config/git-prompt.sh
+
+
+# download sim package management tool
+if [! -e $HOME/.vim/bundle/Vundle.vim ];
+then
+    git clone $VUNDLE_URL ~/.vim/bundle/Vundle.vim
+fi
 
 
 # Setup terminal preference

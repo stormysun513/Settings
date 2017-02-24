@@ -46,6 +46,10 @@ set smartindent
 autocmd Filetype make setlocal sts=0 noexpandtab
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 
+set foldmethod=indent   
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
 set ruler                           " display settings at the right-bottom of screen
 set backspace=2                     " backspace can be used under insert mode
