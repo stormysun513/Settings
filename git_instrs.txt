@@ -1,6 +1,6 @@
 0. Initialise globally
 
-	git config —-global user.name “stormysun513”
+	git config —-global user.name stormysun513
 	git config —-global user.email stormysun513@hotmail.com
 
 1. Initialize local repository
