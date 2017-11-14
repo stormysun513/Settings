@@ -43,13 +43,14 @@ source $HOME/.config/git-prompt.sh
 
 
 # download sim package management tool
-if [! -e $HOME/.vim/bundle/Vundle.vim ];
+if [ ! -e $HOME/.vim/bundle/Vundle.vim ];
 then
     git clone $VUNDLE_URL ~/.vim/bundle/Vundle.vim
 fi
 
 
 # Setup terminal preference
+#export TERM=xterm-256color
 export PS1="\[\e[0;31m\]\u\[\e[m\]@\[\e[0;33m\]\h\[\e[m:\e[0;34m\]\W/\[\e[0;32m\]\$(__git_ps1)\[\e[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
