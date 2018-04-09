@@ -6,17 +6,17 @@
 
 
 """"""""""""""""""""""""""""""
-" Default setting 
+" Default setting
 """"""""""""""""""""""""""""""
 set encoding=utf-8
 set fileencoding=utf-8
 set termencoding=utf-8
-set nocompatible 
+set nocompatible
 set ruler                           	" display settings at the right bottom
 set cursorline                      	" display cursor position
 set number                              " display line numbers
 set history=100                     	" retain 100 used instructions
-set hlsearch                        	" highlisht search results 
+set hlsearch                        	" highlisht search results
 set incsearch                       	" display search result incrementally
 syntax on
 
@@ -62,15 +62,16 @@ let g:lightline = {
 """""""""""""""""""""""""""""
 let Tlist_Use_Right_Window = 1          " move taglist window to the right
 let Tlist_WinWidth = 45
-let Tlist_File_Fold_Auto_Close = 1 
+let Tlist_File_Fold_Auto_Close = 1
 let Tlist_Show_One_File = 0
-let Tlist_Exit_OnlyWindow = 1        
-let Tlist_File_Fold_Auto_Close = 1    
+let Tlist_Exit_OnlyWindow = 1
+let Tlist_File_Fold_Auto_Close = 1
 
 """"""""""""""""""""""""""""""
 " Indentation setting
 """"""""""""""""""""""""""""""
-
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
 
 """"""""""""""""""""""""""""""
 " Keyboard shortcuts setting
