@@ -18,6 +18,7 @@ set number                              " display line numbers
 set history=100                     	" retain 100 used instructions
 set hlsearch                        	" highlisht search results
 set incsearch                       	" display search result incrementally
+set backspace=indent,eol,start		" fix the deletion problem on mac
 syntax on
 
 
