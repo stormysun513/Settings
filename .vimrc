@@ -39,19 +39,6 @@ Plugin 'taglist.vim'
 call vundle#end()                       " required
 
 """"""""""""""""""""""""""""""
-" Indentation settings
-""""""""""""""""""""""""""""""
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
-" set shiftwidth=4                    " the width of indent is set to 4 
-" set tabstop=4                       " the width of a TAB
-" set softtabstop=4                   " set the number of columns for a TAB
-" set expandtab                       " expand tab with spaces
-" set autoindent                      " auto indent
-" set smartindent
-
-
-""""""""""""""""""""""""""""""
 " FileType tab configuration
 """"""""""""""""""""""""""""""
 " autocmd Filetype make setlocal sts=0 noexpandtab
@@ -105,6 +92,19 @@ let Tlist_File_Fold_Auto_Close = 1
 """"""""""""""""""""""""""""""
 " let g:neodark#terminal_transparent = 1  " default: 0
 " colorscheme neodark
+
+
+""""""""""""""""""""""""""""""
+" Indentation settings
+""""""""""""""""""""""""""""""
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
+" set shiftwidth=4                    " the width of indent is set to 4 
+" set tabstop=4                       " the width of a TAB
+" set softtabstop=4                   " set the number of columns for a TAB
+" set expandtab                       " expand tab with spaces
+" set autoindent                      " auto indent
+" set smartindent
 
 
 """"""""""""""""""""""""""""""
