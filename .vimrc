@@ -32,13 +32,36 @@ Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'itchyny/lightline.vim'
 Plugin 'taglist.vim'
+" Plugin 'KeitaNakamura/neodark.vim'
+" Plugin 'godlygeek/tabular'
+" Plugin 'plasticboy/vim-markdown'
 call vundle#end()                       " required
+
+""""""""""""""""""""""""""""""
+" Indentation settings
+""""""""""""""""""""""""""""""
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
+" set shiftwidth=4                    " the width of indent is set to 4 
+" set tabstop=4                       " the width of a TAB
+" set softtabstop=4                   " set the number of columns for a TAB
+" set expandtab                       " expand tab with spaces
+" set autoindent                      " auto indent
+" set smartindent
+
+
+""""""""""""""""""""""""""""""
+" FileType tab configuration
+""""""""""""""""""""""""""""""
+" autocmd Filetype make setlocal sts=0 noexpandtab
+" autocmd Filetype html setlocal ts=2 sts=2 sw=2
+" autocmd BufNewFile,BufRead *.cuh set syntax=cuda
 
 
 """"""""""""""""""""""""""""""
 " NERDTree setting
 """"""""""""""""""""""""""""""
-let NERDTreeIgnore=['\.DS_Store', '\.swp']
+let NERDTreeIgnore=['\~$', '\.DS_Store', '\.swp']
 
 
 """"""""""""""""""""""""""""""
@@ -67,20 +90,29 @@ let Tlist_Show_One_File = 0
 let Tlist_Exit_OnlyWindow = 1
 let Tlist_File_Fold_Auto_Close = 1
 
+
 """"""""""""""""""""""""""""""
-" Indentation setting
+" markdown configuration
+"""""""""""""""""""""""""""""
+" let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_folding_style_pythonic = 1
+" set conceallevel=2
+
+
 """"""""""""""""""""""""""""""
-:highlight ExtraWhitespace ctermbg=red guibg=red
-:match ExtraWhitespace /\s\+$/
+" neodark theme setting
+""""""""""""""""""""""""""""""
+" let g:neodark#terminal_transparent = 1  " default: 0
+" colorscheme neodark
+
 
 """"""""""""""""""""""""""""""
 " Keyboard shortcuts setting
 """"""""""""""""""""""""""""""
-
 nnoremap <F2>   :w<CR>                  " ctrl + S save changes (normal mode)
-inoremap <F2>   <Esc>:w<CR>       	" ctrl + S save changes (edit mode)
+inoremap <F2>   <Esc>:w<CR>       	    " ctrl + S save changes (edit mode)
 nnoremap <F3>   :NERDTreeToggle<CR>     " F2 toggle directory tree
-nnoremap <F8> 	:TlistToggle<CR>	" F8 toggle taglist
+nnoremap <F8> 	:TlistToggle<CR>	    " F8 toggle taglist
 nnoremap <S-F>  :q<CR>                  " shift + F close the current panel
 nnoremap <S-A>  :qa<CR>                 " ctrl + shift + F close the current panel
 
