@@ -1,4 +1,7 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+
 #!/usr/bin/env bash
+
 # .bashrc is executed when terminal is started after login
 
 GIT_PROMPT_URL="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
@@ -50,16 +53,20 @@ fi
 export PS1="\[\e[0;31m\]\u\[\e[m\]@\[\e[0;33m\]\h\[\e[m:\e[0;34m\]\W/\[\e[0;32m\]\$(__git_ps1)\[\e[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
+export EDITOR=vim
 
 # Export path
-#export JAVA_HOME=$(/usr/libexec/java_home)
-#export PATH="$JAVA_HOME/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:$PATH"
+# export JAVA_HOME=$(/usr/libexec/java_home)
+# export PATH="$JAVA_HOME/bin:$PATH"
 # export PIP_REQUIRE_VIRTUALENV=true
 
+# Command alias 
+alias cscope="cscope -Rp5"
+alias xclip="xclip -selection c"
+alias tmux="tmux -2"
+
 # Load keys required for software development
-if [ -f $HOME/.config/devkey.sh ];
+if [ -f $HOME/.config/devkey ];
 then
-    source $HOME/.config/devkey.sh
+    source $HOME/.config/devkey
 fi
