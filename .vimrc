@@ -99,7 +99,7 @@ let Tlist_File_Fold_Auto_Close = 1
 """"""""""""""""""""""""""""""
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
-" set shiftwidth=4                    " the width of indent is set to 4 
+" set shiftwidth=4                    " the width of indent is set to 4
 " set tabstop=4                       " the width of a TAB
 " set softtabstop=4                   " set the number of columns for a TAB
 " set expandtab                       " expand tab with spaces
@@ -110,12 +110,12 @@ let Tlist_File_Fold_Auto_Close = 1
 """"""""""""""""""""""""""""""
 " Keyboard shortcuts setting
 """"""""""""""""""""""""""""""
-nnoremap <F2>   :w<CR>                  " ctrl + S save changes (normal mode)
-inoremap <F2>   <Esc>:w<CR>       	    " ctrl + S save changes (edit mode)
-nnoremap <F3>   :NERDTreeToggle<CR>     " F2 toggle directory tree
-nnoremap <F8> 	:TlistToggle<CR>	    " F8 toggle taglist
-nnoremap <S-F>  :q<CR>                  " shift + F close the current panel
-nnoremap <S-A>  :qa<CR>                 " ctrl + shift + F close the current panel
+nnoremap <F2>   :w<CR>			" ctrl + S save changes (normal mode)
+inoremap <F2>   <Esc>:w<CR>		" ctrl + S save changes (edit mode)
+nnoremap <F3>   :NERDTreeToggle<CR>	" F2 toggle directory tree
+nnoremap <F8> 	:TlistToggle<CR>	" F8 toggle taglist
+nnoremap <S-F>  :q<CR>			" shift + F close the current panel
+nnoremap <S-A>  :qa<CR>			" ctrl + shift + F close the current panel
 
 
 """"""""""""""""""""""""""""""""""
