@@ -19,6 +19,7 @@ set history=100                     	" retain 100 used instructions
 set hlsearch                        	" highlisht search results
 set incsearch                       	" display search result incrementally
 set backspace=indent,eol,start		" fix the deletion problem on mac
+set nowrap
 syntax on
 
 
@@ -34,16 +35,14 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'itchyny/lightline.vim'
 Plugin 'taglist.vim'
 " Plugin 'KeitaNakamura/neodark.vim'
-" Plugin 'godlygeek/tabular'
-" Plugin 'plasticboy/vim-markdown'
+" Plugin 'iamcco/markdown-preview.vim'
 call vundle#end()                       " required
 
+
 """"""""""""""""""""""""""""""
-" FileType tab configuration
+" vim-commentary configuration
 """"""""""""""""""""""""""""""
-" autocmd Filetype make setlocal sts=0 noexpandtab
-" autocmd Filetype html setlocal ts=2 sts=2 sw=2
-" autocmd BufNewFile,BufRead *.cuh set syntax=cuda
+autocmd FileType python,apache setlocal commentstring=#\ %s
 
 
 """"""""""""""""""""""""""""""
@@ -80,14 +79,6 @@ let Tlist_File_Fold_Auto_Close = 1
 
 
 """"""""""""""""""""""""""""""
-" markdown configuration
-"""""""""""""""""""""""""""""
-" let g:vim_markdown_folding_disabled = 1
-" let g:vim_markdown_folding_style_pythonic = 1
-" set conceallevel=2
-
-
-""""""""""""""""""""""""""""""
 " neodark theme setting
 """"""""""""""""""""""""""""""
 " let g:neodark#terminal_transparent = 1  " default: 0
@@ -105,17 +96,21 @@ let Tlist_File_Fold_Auto_Close = 1
 " set expandtab                       " expand tab with spaces
 " set autoindent                      " auto indent
 " set smartindent
+" autocmd Filetype make setlocal sts=0 noexpandtab
+" autocmd Filetype html setlocal ts=2 sts=2 sw=2
+" autocmd BufNewFile,BufRead *.cuh set syntax=cuda
 
 
 """"""""""""""""""""""""""""""
 " Keyboard shortcuts setting
 """"""""""""""""""""""""""""""
-nnoremap <F2>   :w<CR>			" ctrl + S save changes (normal mode)
-inoremap <F2>   <Esc>:w<CR>		" ctrl + S save changes (edit mode)
-nnoremap <F3>   :NERDTreeToggle<CR>	" F2 toggle directory tree
-nnoremap <F8> 	:TlistToggle<CR>	" F8 toggle taglist
-nnoremap <S-F>  :q<CR>			" shift + F close the current panel
-nnoremap <S-A>  :qa<CR>			" ctrl + shift + F close the current panel
+nnoremap <F2>		:w<CR>			" ctrl + S save changes (normal mode)
+inoremap <F2>		<Esc>:w<CR>		" ctrl + S save changes (edit mode)
+nnoremap <F3>		:NERDTreeToggle<CR>	" F3 toggle directory tree
+nnoremap <F4>		:set hls!<CR>		" toggle highlighting search result
+nnoremap <F8>		:TlistToggle<CR>	" F8 toggle taglist
+nnoremap <S-F>		:q<CR>			" shift + F close the current panel
+nnoremap <S-A>		:qa<CR>			" ctrl + shift + F close the current panel
 
 
 """"""""""""""""""""""""""""""""""
