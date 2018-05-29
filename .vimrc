@@ -1,5 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VIM configuration File
 " Description: VIM setting for software development on Linux platform
 " Author: Larry Tsai <stormysun513@gmail.com>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -43,6 +41,7 @@ call vundle#end()                       " required
 " vim-commentary configuration
 """"""""""""""""""""""""""""""
 autocmd FileType python,apache setlocal commentstring=#\ %s
+autocmd FileType html setlocal commentstring=<!--\ %s\ -->
 
 
 """"""""""""""""""""""""""""""
@@ -90,12 +89,8 @@ let Tlist_File_Fold_Auto_Close = 1
 """"""""""""""""""""""""""""""
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
-" set shiftwidth=4                    " the width of indent is set to 4
-" set tabstop=4                       " the width of a TAB
-" set softtabstop=4                   " set the number of columns for a TAB
-" set expandtab                       " expand tab with spaces
-" set autoindent                      " auto indent
-" set smartindent
+autocmd FileType python,vim,sh,expect setl sw=4 sts=4 et	" ts: tabstop, sw: shiftwidth, sts: softtabstop, et: expandtab
+autocmd FileType c setl noet			        " noexpandtab
 " autocmd Filetype make setlocal sts=0 noexpandtab
 " autocmd Filetype html setlocal ts=2 sts=2 sw=2
 " autocmd BufNewFile,BufRead *.cuh set syntax=cuda
@@ -104,13 +99,13 @@ let Tlist_File_Fold_Auto_Close = 1
 """"""""""""""""""""""""""""""
 " Keyboard shortcuts setting
 """"""""""""""""""""""""""""""
-nnoremap <F2>		:w<CR>			" ctrl + S save changes (normal mode)
-inoremap <F2>		<Esc>:w<CR>		" ctrl + S save changes (edit mode)
-nnoremap <F3>		:NERDTreeToggle<CR>	" F3 toggle directory tree
+nnoremap <F2>		:w<CR>                  " ctrl + S save changes (normal mode)
+inoremap <F2>		<Esc>:w<CR>       	" ctrl + S save changes (edit mode)
+nnoremap <F3>		:NERDTreeToggle<CR>     " F3 toggle directory tree
 nnoremap <F4>		:set hls!<CR>		" toggle highlighting search result
 nnoremap <F8>		:TlistToggle<CR>	" F8 toggle taglist
-nnoremap <S-F>		:q<CR>			" shift + F close the current panel
-nnoremap <S-A>		:qa<CR>			" ctrl + shift + F close the current panel
+nnoremap <S-F>		:q<CR>                  " shift + F close the current panel
+nnoremap <S-A>		:qa<CR>                 " ctrl + shift + F close the current panel
 
 
 """"""""""""""""""""""""""""""""""
