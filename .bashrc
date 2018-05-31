@@ -2,12 +2,15 @@
 
 #!/usr/bin/env bash
 
+###########################################################
 # .bashrc is executed when terminal is started after login
+###########################################################
 
+# package url that will be loaded while executin .bashrc
 GIT_PROMPT_URL="https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh"
 VUNDLE_URL="https://github.com/VundleVim/Vundle.vim.git"
 
-# No ttyctl while using vim, so we need to save and then restore terminal settings
+# no ttyctl while using vim, so we need to save and then restore terminal settings
 vim() {
     # osx users, use stty -g; linux users use stty --save
     local STTYOPTS=
@@ -31,7 +34,7 @@ vim() {
     stty "$STTYOPTS"
 }
 
-# Download git-prompt setting file
+# download git-prompt setting file
 if [ ! -e $HOME/.config ];
 then
     mkdir $HOME/.config
@@ -41,7 +44,7 @@ then
     curl -s -o $HOME/.config/git-prompt.sh $GIT_PROMPT_URL > /dev/null
 fi
 source $HOME/.config/git-prompt.sh
-vim ~/.ca   
+
 # download sim package management tool
 if [ ! -e $HOME/.vim/bundle/Vundle.vim ];
 then
@@ -64,6 +67,7 @@ export EDITOR=vim
 alias cscope="cscope -Rp5"
 alias xclip="xclip -selection c"
 alias tmux="tmux -2"
+alias pip-update="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
 # Load keys required for software development
 if [ -f $HOME/.config/devkey ];
