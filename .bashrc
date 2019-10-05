@@ -18,11 +18,9 @@ vim() {
         Darwin)
             STTYOPTS="$(stty -g)"
             ;;
-
         Linux)
             STTYOPTS="$(stty --save)"
             ;;
-
         # Add here more strings to compare
         # See correspondence table at the bottom of this answer
         *)
@@ -52,8 +50,8 @@ then
 fi
 
 # Setup terminal preference
-#export TERM=xterm-256color
-export PS1="\[\e[0;31m\]\u\[\e[m\]@\[\e[0;33m\]\h\[\e[m:\e[0;34m\]\W/\[\e[0;32m\]\$(__git_ps1)\[\e[m\]\$ "
+# export TERM=xterm-256color
+export PS1="\[\e[0;31m\]\u\[\e[m\]@\[\e[0;33m\]MBP\[\e[m:\e[0;34m\]\W/\[\e[0;32m\]\$(__git_ps1)\[\e[m\]\$ "
 export CLICOLOR=1
 export LSCOLORS=exfxcxdxbxegedabagacad
 export EDITOR=vim
@@ -61,11 +59,16 @@ export EDITOR=vim
 # Export path
 # export JAVA_HOME=$(/usr/libexec/java_home)
 # export PATH="$JAVA_HOME/bin:$PATH"
-# export PIP_REQUIRE_VIRTUALENV=true
+export PATH="$PATH:/usr/local/sbin"
+export PIP_REQUIRE_VIRTUALENV=true
+export CSCOPE_EDITOR=`which vim`
 
-# Command alias 
+# Command alias
 alias cscope="cscope -Rp5"
-alias xclip="xclip -selection c"
+# linux clipboard
+# alias xclip="xclip -selection c"
+# MAC OS clipboard
+# pbcopy
 alias tmux="tmux -2"
 alias pip-update="pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 
